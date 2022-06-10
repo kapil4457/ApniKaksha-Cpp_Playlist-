@@ -150,11 +150,12 @@ string replaceStr(string str, int start)
 {
     if (start > str.length())
     {
-        return str;
+        return;
     }
     if (str[start] == 'p' && str[start + 1] == 'i')
     {
         str.replace(start, 2, "3.14");
+        // cout << str << endl;
         return replaceStr(str, start + 2);
     }
     else
@@ -184,7 +185,7 @@ int main()
     // cout << lastoccur(arr, 9, 0, 2) << endl;
 
     // revStr("kapil");
-    cout << replaceStr("pippopppirtpi", 0);
+    replaceStr("pippopppirtpi", 0);
 
     return 0;
 }

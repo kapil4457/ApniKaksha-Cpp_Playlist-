@@ -150,7 +150,7 @@ string replaceStr(string str, int start)
 {
     if (start > str.length())
     {
-        return str;
+        return " ";
     }
     if (str[start] == 'p' && str[start + 1] == 'i')
     {

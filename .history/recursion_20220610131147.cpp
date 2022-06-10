@@ -139,31 +139,10 @@ void revStr(string str)
         return;
     }
     string ros = str.substr(1);
-    cout << ros << endl;
     revStr(ros);
     cout << str[0];
 }
 
-// Reverse pi with 3.14 in the given string
-
-string replaceStr(string str, int start)
-{
-    if (start > str.length())
-    {
-        return str;
-    }
-    if (str[start] == 'p' && str[start + 1] == 'i')
-    {
-        str.replace(start, 2, "3.14");
-        return replaceStr(str, start + 2);
-    }
-    else
-    {
-        return replaceStr(str, start + 1);
-    }
-    // cout << "End" << endl;
-    return str;
-}
 int main()
 {
 
@@ -184,7 +163,6 @@ int main()
     // cout << lastoccur(arr, 9, 0, 2) << endl;
 
     // revStr("kapil");
-    cout << replaceStr("pippopppirtpi", 0);
 
     return 0;
 }
