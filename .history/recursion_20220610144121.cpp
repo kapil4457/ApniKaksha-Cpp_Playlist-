@@ -223,18 +223,7 @@ string move_to_end(string s)
 }
 
 // Generate all substr
-void allSubStr(string s, string ans)
-{
-    if (s.length() == 0)
-    {
-        cout << ans << endl;
-        return;
-    }
-    char ch = s[0];
-    string ros = s.substr(1);
-    allSubStr(ros, ans);
-    allSubStr(ros, ans + ch);
-}
+
 int main()
 {
 
@@ -261,8 +250,6 @@ int main()
     // vector<char> ans;
     // new_str("egahrjtbsvvaytrajhdfvg", ans);
 
-    // cout << move_to_end("xapxux");
-
-    allSubStr("ABC", "");
+    cout << move_to_end("xapxux");
     return 0;
 }

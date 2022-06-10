@@ -201,39 +201,27 @@ void new_str(string s, vector<char> ans)
 string move_to_end(string s)
 {
     static int ptr = 0;
+    static int count;
 
-    if (ptr == s.length())
+    if (count == s.length())
     {
         return s;
     }
 
     if (s[ptr] == 'x')
     {
-        s.append("x");
-        s.replace(ptr, 1, "");
+        s.append('x');
+        s.substr(ptr, 1, "");
         ptr++;
+        count++;
         return move_to_end(s);
     }
     else
     {
         ptr++;
-        return move_to_end(s);
+        count++;
     }
     return s;
-}
-
-// Generate all substr
-void allSubStr(string s, string ans)
-{
-    if (s.length() == 0)
-    {
-        cout << ans << endl;
-        return;
-    }
-    char ch = s[0];
-    string ros = s.substr(1);
-    allSubStr(ros, ans);
-    allSubStr(ros, ans + ch);
 }
 int main()
 {
@@ -258,11 +246,7 @@ int main()
     // cout << replaceStr("pippopppirtpi", 0);
     // toh(3, 'A', 'C', 'B');
 
-    // vector<char> ans;
-    // new_str("egahrjtbsvvaytrajhdfvg", ans);
-
-    // cout << move_to_end("xapxux");
-
-    allSubStr("ABC", "");
+    vector<char> ans;
+    new_str("egahrjtbsvvaytrajhdfvg", ans);
     return 0;
 }

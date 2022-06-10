@@ -263,6 +263,5 @@ int main()
 
     // cout << move_to_end("xapxux");
 
-    allSubStr("ABC", "");
     return 0;
 }

@@ -197,12 +197,13 @@ void new_str(string s, vector<char> ans)
 }
 
 // Move all the x to the end
-
+// akgrwxtgbjxbfhxgfxt
 string move_to_end(string s)
 {
     static int ptr = 0;
+    static int count = 0;
 
-    if (ptr == s.length())
+    if (count == s.length())
     {
         return s;
     }
@@ -212,28 +213,17 @@ string move_to_end(string s)
         s.append("x");
         s.replace(ptr, 1, "");
         ptr++;
+        count++;
+        cout << s << endl;
         return move_to_end(s);
     }
     else
     {
         ptr++;
+        count++;
         return move_to_end(s);
     }
     return s;
-}
-
-// Generate all substr
-void allSubStr(string s, string ans)
-{
-    if (s.length() == 0)
-    {
-        cout << ans << endl;
-        return;
-    }
-    char ch = s[0];
-    string ros = s.substr(1);
-    allSubStr(ros, ans);
-    allSubStr(ros, ans + ch);
 }
 int main()
 {
@@ -261,8 +251,6 @@ int main()
     // vector<char> ans;
     // new_str("egahrjtbsvvaytrajhdfvg", ans);
 
-    // cout << move_to_end("xapxux");
-
-    allSubStr("ABC", "");
+    cout << move_to_end("xapxux");
     return 0;
 }

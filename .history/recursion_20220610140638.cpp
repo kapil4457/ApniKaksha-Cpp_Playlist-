@@ -179,61 +179,16 @@ void toh(int n, char src, char dest, char helper)
 }
 
 // Remove all duplicates fom a string
-void new_str(string s, vector<char> ans)
+
+string removeDup(string str, char start)
 {
-    if (s.length() == 0)
-        return;
-
-    if (find(ans.begin(), ans.end(), s[0]) != ans.end())
+    static int idx = 1;
+    if (str[idx] == start)
     {
-        new_str(s.substr(1), ans);
-    }
-    else
-    {
-        cout << s[0];
-        ans.push_back(s[0]);
-        new_str(s.substr(1), ans);
-    }
-}
+        str.erase(start);
 
-// Move all the x to the end
-
-string move_to_end(string s)
-{
-    static int ptr = 0;
-
-    if (ptr == s.length())
-    {
-        return s;
-    }
-
-    if (s[ptr] == 'x')
-    {
-        s.append("x");
-        s.replace(ptr, 1, "");
-        ptr++;
-        return move_to_end(s);
-    }
-    else
-    {
-        ptr++;
-        return move_to_end(s);
-    }
-    return s;
-}
-
-// Generate all substr
-void allSubStr(string s, string ans)
-{
-    if (s.length() == 0)
-    {
-        cout << ans << endl;
-        return;
-    }
-    char ch = s[0];
-    string ros = s.substr(1);
-    allSubStr(ros, ans);
-    allSubStr(ros, ans + ch);
+        removeDup(str, idx);
+        }
 }
 int main()
 {
@@ -256,13 +211,6 @@ int main()
 
     // revStr("kapil");
     // cout << replaceStr("pippopppirtpi", 0);
-    // toh(3, 'A', 'C', 'B');
-
-    // vector<char> ans;
-    // new_str("egahrjtbsvvaytrajhdfvg", ans);
-
-    // cout << move_to_end("xapxux");
-
-    allSubStr("ABC", "");
+    toh(3, 'A', 'C', 'B');
     return 0;
 }
