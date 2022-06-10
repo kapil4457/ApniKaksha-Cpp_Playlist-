@@ -1,1 +1,0 @@
-{"name":"Local: largestWordInASentence","url":"e:\\cpp\\largestWordInASentence.cpp","tests":[{"id":1654673281191,"input":"12\ndo or dying\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\cpp\\largestWordInASentence.cpp","group":"local","local":true}
