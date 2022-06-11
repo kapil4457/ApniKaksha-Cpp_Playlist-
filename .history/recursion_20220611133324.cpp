@@ -1,0 +1,326 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Sum of n numbers
+int sum(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    return n + sum(n - 1);
+}
+// n raised to poer p
+int power(int a, int b)
+{
+    if (b == 0)
+    {
+        return 1;
+    }
+    return a * power(a, b - 1);
+}
+
+// Factorial of a number
+int fac(int n)
+{
+    if (n == 0)
+    {
+        return 1;
+    }
+    return n * fac(n - 1);
+}
+
+// Print nth fibonacci number
+int fib(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    if (n == 1)
+    {
+        return 1;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+// Check if the given array is sorted or not
+bool sorted(int arr[], int start, int end)
+
+{
+    if (start == end - 1)
+    {
+        if (arr[start] < arr[start + 1])
+        {
+            return true;
+        }
+    }
+    else if (arr[start] < arr[start + 1])
+    {
+        sorted(arr, start + 1, end);
+    }
+
+    return false;
+}
+
+// Print in increasing  order
+
+void printIncreasing(int n)
+{
+    static int c = 0;
+    if (c == n)
+    {
+        cout << n;
+        return;
+    }
+    else
+    {
+        cout << c << " ";
+        c++;
+        printIncreasing(n);
+    }
+}
+
+// Print NUmbers in decreasing number
+void printdecreasing(int n)
+{
+
+    if (n == 0)
+    {
+        cout << n;
+        return;
+    }
+    else
+    {
+        cout << n << " ";
+
+        printdecreasing(n - 1);
+    }
+}
+
+// Find the first  occurance of a number in an array
+int firoccur(int arr[], int n, int i, int key)
+{
+    if (i == n)
+    {
+        return -1;
+    }
+    if (arr[i] == key)
+    {
+        return i;
+    }
+    return firoccur(arr, n, i + 1, key);
+}
+// Find the last occurance of a number in an array
+
+int lastoccur(int arr[], int n, int i, int key)
+{
+    if (i == n)
+    {
+        return -1;
+    }
+    int restArray = lastoccur(arr, n, i + 1, key);
+    if (restArray != -1)
+    {
+        return restArray;
+    }
+    if (arr[i] == key)
+    {
+        return i;
+    }
+    return -1;
+}
+
+// Reverse a string using recursion
+void revStr(string str)
+{
+    if (str.length() == 0)
+    {
+        return;
+    }
+    string ros = str.substr(1);
+    cout << ros << endl;
+    revStr(ros);
+    cout << str[0];
+}
+
+// Reverse pi with 3.14 in the given string
+
+string replaceStr(string str, int start)
+{
+    if (start > str.length())
+    {
+        return str;
+    }
+    if (str[start] == 'p' && str[start + 1] == 'i')
+    {
+        str.replace(start, 2, "3.14");
+        return replaceStr(str, start + 2);
+    }
+    else
+    {
+        return replaceStr(str, start + 1);
+    }
+    // cout << "End" << endl;
+    return str;
+}
+
+// Tower of hanoi
+void toh(int n, char src, char dest, char helper)
+{
+    if (n == 0)
+    {
+        return;
+    }
+
+    toh(n - 1, src, helper, dest);
+    cout << "Move from " << src << " to " << dest << endl;
+    toh(n - 1, helper, dest, src);
+}
+
+// Remove all duplicates fom a string
+void new_str(string s, vector<char> ans)
+{
+    if (s.length() == 0)
+        return;
+
+    if (find(ans.begin(), ans.end(), s[0]) != ans.end())
+    {
+        new_str(s.substr(1), ans);
+    }
+    else
+    {
+        cout << s[0];
+        ans.push_back(s[0]);
+        new_str(s.substr(1), ans);
+    }
+}
+
+// Move all the x to the end
+
+string move_to_end(string s)
+{
+    static int ptr = 0;
+
+    if (ptr == s.length())
+    {
+        return s;
+    }
+
+    if (s[ptr] == 'x')
+    {
+        s.append("x");
+        s.replace(ptr, 1, "");
+        ptr++;
+        return move_to_end(s);
+    }
+    else
+    {
+        ptr++;
+        return move_to_end(s);
+    }
+    return s;
+}
+
+// Generate all substr
+void allSubStr(string s, string ans)
+{
+    if (s.length() == 0)
+    {
+        cout << ans << endl;
+        return;
+    }
+    char ch = s[0];
+    string ros = s.substr(1);
+    allSubStr(ros, ans);
+    allSubStr(ros, ans + ch);
+}
+
+// Print all the permutations of a given string
+void permutStr(string s, string ans)
+{
+    if (s.length() == 0)
+    {
+        cout << ans << endl;
+        return;
+    }
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        char ch = s[i];
+        string ros = s.substr(0, i) + s.substr(i + 1);
+        permutStr(ros, ans + ch);
+    }
+}
+// Count the number of ways to reach the a particular destination
+
+int countPath(int s, int e)
+{
+    if (s == e)
+    {
+        return 1;
+    }
+    if (s > e)
+    {
+        return 0;
+    }
+
+    int count = 0;
+    for (int i = 1; i <= 6; i++)
+    {
+        count += countPath(s + i, e);
+    }
+
+    return count;
+}
+
+// Count the numbers in the path
+int countmazePath(int n, int i, int j)
+{
+    if (i == n - 1 && j == n - 1)
+    {
+        return 1;
+    }
+    if (i >= n || j >= n)
+    {
+        return 0;
+    }
+    return countmazePath(n, i + 1, j) + countmazePath(n, i, j + 1);
+}
+int main()
+{
+
+    // cout << sum(5) << endl;
+    // cout << power(4, 3) << endl;
+    // cout << fac(10) << endl;
+    // cout << fib(10) << endl;
+
+    int arr[9] = {1, 2, 3, 4, 51, 6, 2, 8, 1};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    // cout << sorted(arr, 0, size);
+
+    // printIncreasing(10);
+    // cout << endl;
+    // printdecreasing(10);
+
+    // cout << firoccur(arr, 9, 0, 2) << endl;
+    // cout << lastoccur(arr, 9, 0, 2) << endl;
+
+    // revStr("kapil");
+    // cout << replaceStr("pippopppirtpi", 0);
+    // toh(3, 'A', 'C', 'B');
+
+    // vector<char> ans;
+    // new_str("egahrjtbsvvaytrajhdfvg", ans);
+
+    // cout << move_to_end("xapxux");
+
+    // allSubStr("ABC", "");
+
+    // permutStr("ABC", "");
+
+    // cout << countPath(0, 3);
+
+    cout << countmazePath(3, 0, 0) << endl;
+    return 0;
+}
