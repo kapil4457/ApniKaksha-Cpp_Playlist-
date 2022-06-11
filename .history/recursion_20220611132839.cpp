@@ -319,8 +319,6 @@ int main()
 
     // permutStr("ABC", "");
 
-    // cout << countPath(0, 3);
-
-    cout << countmazePath(3, 0, 0) << endl;
+    cout << countPath(0, 3);
     return 0;
 }

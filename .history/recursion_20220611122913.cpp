@@ -251,76 +251,39 @@ void permutStr(string s, string ans)
         string ros = s.substr(0, i) + s.substr(i + 1);
         permutStr(ros, ans + ch);
     }
-}
-// Count the number of ways to reach the a particular destination
 
-int countPath(int s, int e)
-{
-    if (s == e)
+    // Count the number of ways to reach the a particular destination
+
+    int main()
     {
-        return 1;
-    }
-    if (s > e)
-    {
+
+        // cout << sum(5) << endl;
+        // cout << power(4, 3) << endl;
+        // cout << fac(10) << endl;
+        // cout << fib(10) << endl;
+
+        int arr[9] = {1, 2, 3, 4, 51, 6, 2, 8, 1};
+        int size = sizeof(arr) / sizeof(arr[0]);
+        // cout << sorted(arr, 0, size);
+
+        // printIncreasing(10);
+        // cout << endl;
+        // printdecreasing(10);
+
+        // cout << firoccur(arr, 9, 0, 2) << endl;
+        // cout << lastoccur(arr, 9, 0, 2) << endl;
+
+        // revStr("kapil");
+        // cout << replaceStr("pippopppirtpi", 0);
+        // toh(3, 'A', 'C', 'B');
+
+        // vector<char> ans;
+        // new_str("egahrjtbsvvaytrajhdfvg", ans);
+
+        // cout << move_to_end("xapxux");
+
+        // allSubStr("ABC", "");
+
+        permutStr("ABC", "");
         return 0;
     }
-
-    int count = 0;
-    for (int i = 1; i <= 6; i++)
-    {
-        count += countPath(s + i, e);
-    }
-
-    return count;
-}
-
-// Count the numbers in the path
-int countmazePath(int n, int i, int j)
-{
-    if (i == n - 1 && j == n - 1)
-    {
-        return 1;
-    }
-    if (i >= n || j >= n)
-    {
-        return 0;
-    }
-    return countmazePath(n, i + 1, j) + countmazePath(n, i, j + 1);
-}
-int main()
-{
-
-    // cout << sum(5) << endl;
-    // cout << power(4, 3) << endl;
-    // cout << fac(10) << endl;
-    // cout << fib(10) << endl;
-
-    int arr[9] = {1, 2, 3, 4, 51, 6, 2, 8, 1};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    // cout << sorted(arr, 0, size);
-
-    // printIncreasing(10);
-    // cout << endl;
-    // printdecreasing(10);
-
-    // cout << firoccur(arr, 9, 0, 2) << endl;
-    // cout << lastoccur(arr, 9, 0, 2) << endl;
-
-    // revStr("kapil");
-    // cout << replaceStr("pippopppirtpi", 0);
-    // toh(3, 'A', 'C', 'B');
-
-    // vector<char> ans;
-    // new_str("egahrjtbsvvaytrajhdfvg", ans);
-
-    // cout << move_to_end("xapxux");
-
-    // allSubStr("ABC", "");
-
-    // permutStr("ABC", "");
-
-    // cout << countPath(0, 3);
-
-    cout << countmazePath(3, 0, 0) << endl;
-    return 0;
-}

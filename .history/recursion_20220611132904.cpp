@@ -321,6 +321,6 @@ int main()
 
     // cout << countPath(0, 3);
 
-    cout << countmazePath(3, 0, 0) << endl;
+    cout << countmazePath(3, 0, 0);
     return 0;
 }

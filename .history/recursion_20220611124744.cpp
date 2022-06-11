@@ -266,26 +266,12 @@ int countPath(int s, int e)
     }
 
     int count = 0;
-    for (int i = 1; i <= 6; i++)
+    for (int i = 0; i <= 6; i++)
     {
         count += countPath(s + i, e);
     }
 
     return count;
-}
-
-// Count the numbers in the path
-int countmazePath(int n, int i, int j)
-{
-    if (i == n - 1 && j == n - 1)
-    {
-        return 1;
-    }
-    if (i >= n || j >= n)
-    {
-        return 0;
-    }
-    return countmazePath(n, i + 1, j) + countmazePath(n, i, j + 1);
 }
 int main()
 {
@@ -319,8 +305,6 @@ int main()
 
     // permutStr("ABC", "");
 
-    // cout << countPath(0, 3);
-
-    cout << countmazePath(3, 0, 0) << endl;
+    cout << countPath(0, 3);
     return 0;
 }
