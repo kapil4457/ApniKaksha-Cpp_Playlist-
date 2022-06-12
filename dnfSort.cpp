@@ -1,5 +1,5 @@
 // Full form : Dutch National Flag(DNF)
-
+// Only used for array with value as 0,1,2
 // if 0 : Swap arr[low] and arr[mid] , low++ , mid++
 // if 1 : mid++
 // if 2 : Swap arr[mid] and arr[high] ,high--
