@@ -26,7 +26,7 @@ class C : public A, public B
 public:
 };
 
-// multiLevel Inheritance
+// Multi Level Inheritance
 class D : public B
 {
 };
