@@ -23,6 +23,8 @@
         "regex": "cpp",
         "tuple": "cpp",
         "type_traits": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp"
     }
 }
