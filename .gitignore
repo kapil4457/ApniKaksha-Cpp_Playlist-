@@ -20,6 +20,8 @@
 *.mod
 *.smod
 .history
+.idea
+.vscode
 
 # Compiled Static libraries
 *.lai
