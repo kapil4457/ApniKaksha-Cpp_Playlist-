@@ -230,20 +230,20 @@ int main()
     insertAtHead(head, 4);
     insertAtHead(head, 5);
     insertAtHead(head, 6);
-    // printList(head);
-    // cout << Searching(head, 8) << endl;
-    // deleteNode(head, 2);
-    // printList(head);
-    // deleteNode(head, 5);
+    printList(head);
+    cout << Searching(head, 8) << endl;
+    deleteNode(head, 2);
+    printList(head);
+    deleteNode(head, 5);
     printList(head);
 
-    // node *newHead1 = reverse(head);
-    // node *newHead2 = reverseRecursive(head);
-    // printList(newHead2);
+    node *newHead1 = reverse(head);
+    node *newHead2 = reverseRecursive(head);
+    printList(newHead2);
 
-    // int k = 2;
-    // node *newHead = reversek(head, k);
-    // printList(newHead);
+    int k = 2;
+    node *newHead = reversek(head, k);
+    printList(newHead);
 
     makeCycle(head, 3);
     cout << detectCycle(head) << endl;
