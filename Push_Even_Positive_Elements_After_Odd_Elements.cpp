@@ -116,6 +116,7 @@ int main()
     insertAtTail(head1, 4);
     insertAtTail(head1, 5);
     insertAtTail(head1, 6);
+    insertAtTail(head1, 7);
     printList(head1);
     EvenAfterOdd(head1);
     printList(head1);
