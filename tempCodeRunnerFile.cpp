@@ -1,0 +1,2 @@
+(val);
+    node *temp = head;
