@@ -20,7 +20,7 @@ vector<int> stockspan(vector<int> prices)
 }
 int main()
 {
-    vector<int> a = {100, 80, 60, 70, 60, 75, 85};
+    vector<int> a = {100, 80, 60, 70, 60, 75, 85, 90};
     vector<int> res = stockspan(a);
     for (auto i : res)
     {
