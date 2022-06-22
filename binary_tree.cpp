@@ -231,7 +231,7 @@ int main()
     // printLevelOrder(root);
 
     /*-------Sum of nodes a t Kth level---------*/
-    cout << sumAtK(root, 2);
+    cout << sumAtK(root, 2) << endl;
 
     return 0;
 }
