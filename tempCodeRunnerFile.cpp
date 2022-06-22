@@ -1,2 +1,3 @@
-(val);
-    node *temp = head;
+preOrder(root);
+    // inOrder(root);
+    // postOrder(root);

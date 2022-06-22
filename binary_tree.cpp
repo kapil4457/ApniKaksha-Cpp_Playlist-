@@ -120,16 +120,51 @@ Node *buildTree2(int postOrder[], int inOrder[], int start, int end)
 
     return curr;
 }
+
+//-----------Level Order Traversal-----------
+// It is performed using a queue
+
+void printLevelOrder(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    queue<Node *> q;
+    q.push(root);
+    q.push(NULL);
+    while (!q.empty())
+    {
+        Node *node = q.front();
+        q.pop();
+        if (node != NULL)
+        {
+            cout << node->data << " ";
+            if (node->left)
+            {
+                q.push(node->left);
+            }
+            if (node->right)
+            {
+                q.push(node->left);
+            }
+        }
+        else if (!q.empty())
+        {
+            q.push(NULL);
+        }
+    }
+}
 int main()
 {
     /*---------Tree Traversal-------*/
-    // struct Node *root = new Node(1);
-    // root->left = new Node(2);
-    // root->right = new Node(3);
-    // root->left->left = new Node(4);
-    // root->left->right = new Node(5);
-    // root->right->left = new Node(6);
-    // root->right->right = new Node(7);
+    struct Node *root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    root->right->left = new Node(6);
+    root->right->right = new Node(7);
     // preOrder(root);
     // inOrder(root);
     // postOrder(root);
@@ -143,10 +178,13 @@ int main()
     // inOrder(root);
 
     // 2. From inOrder and postOrder traversal Array
-    int inorder[] = {4, 2, 1, 5, 3};
-    int postorder[] = {4, 2, 1, 5, 3};
-    Node *root = buildTree2(postorder, inorder, 0, 4);
-    inOrder(root);
+    // int inorder[] = {4, 2, 1, 5, 3};
+    // int postorder[] = {4, 2, 1, 5, 3};
+    // Node *root = buildTree2(postorder, inorder, 0, 4);
+    // inOrder(root);
+
+    /*--------Level Order Traversal----------*/
+    printLevelOrder(root);
 
     return 0;
 }
