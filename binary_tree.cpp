@@ -208,6 +208,21 @@ int countNodes(Node *root)
     return countNodes(root->left) + countNodes(root->right) + 1;
 }
 
+int SumOfAllNodes(Node *root)
+{
+
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    static int ans = 0;
+    ans += root->data;
+    SumOfAllNodes(root->left);
+    SumOfAllNodes(root->right);
+
+    return ans;
+}
 int main()
 {
     /*---------Tree Traversal-------*/
@@ -245,5 +260,7 @@ int main()
     /* -------No. of nodes in binary tree------   */
     cout << countNodes(root) << endl;
 
+    /*------Sum of all nodes in a binary tree--------*/
+    cout << SumOfAllNodes(root) << endl;
     return 0;
 }
