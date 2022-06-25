@@ -199,6 +199,15 @@ int sumAtK(Node *root, int k)
     return sum;
 }
 
+int countNodes(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return countNodes(root->left) + countNodes(root->right) + 1;
+}
+
 int main()
 {
     /*---------Tree Traversal-------*/
@@ -231,7 +240,10 @@ int main()
     // printLevelOrder(root);
 
     /*-------Sum of nodes a t Kth level---------*/
-    cout << sumAtK(root, 2) << endl;
+    // cout << sumAtK(root, 2) << endl;
+
+    /* -------No. of nodes in binary tree------   */
+    cout << countNodes(root) << endl;
 
     return 0;
 }
