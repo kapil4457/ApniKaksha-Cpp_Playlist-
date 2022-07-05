@@ -47,11 +47,46 @@ void inorder(node *root)
     inorder(root->right);
 }
 
+int search(node *root, int val)
+{
+    static int found = 0;
+    if (root == NULL)
+    {
+        return found;
+    }
+    if (root->val == val)
+    {
+        found = 1;
+        return found;
+    }
+    if (val > root->val)
+    {
+
+        search(root->right, val);
+    }
+    else
+    {
+
+        search(root->left, val);
+    }
+
+    return found;
+}
+
 int main()
 {
     node *root = new node(5);
     insert(root, 1);
     insert(root, 3);
     inorder(root);
+    cout << endl;
+    if (search(root, 1))
+    {
+        cout << "Present";
+    }
+    else
+    {
+        cout << "Absent";
+    }
     return 0;
 }
