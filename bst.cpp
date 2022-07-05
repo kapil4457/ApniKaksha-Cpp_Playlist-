@@ -111,5 +111,6 @@ int main()
 
     deleteNode(root, 1);
     inorder(root);
-    return 0;
+
+        return 0;
 }
