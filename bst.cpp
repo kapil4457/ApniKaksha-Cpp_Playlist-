@@ -35,10 +35,23 @@ node *insert(node *root, int val)
     return root;
 }
 
+void inorder(node *root)
+{
+
+    if (root == NULL)
+    {
+        return;
+    }
+    inorder(root->left);
+    cout << root->val << " ";
+    inorder(root->right);
+}
+
 int main()
 {
-    node *root = new node(2);
+    node *root = new node(5);
     insert(root, 1);
     insert(root, 3);
+    inorder(root);
     return 0;
 }
